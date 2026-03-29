@@ -600,7 +600,7 @@ window.addEventListener("popstate", function () {
                 hideLoading();  
 
                 if (response.ok) {  
-                    showPopup("✅ Your order has been placed successfully. You will receive a confirmation email shortly.                              You will receive a confirmation email shortly");  
+                    showPopup("✅ Your order has been placed successfully. You will receive a confirmation email shortly.");  
                     setTimeout(() => {  
                         selectedIds = [];  
                         savedVariants = {}; // NEW: clear variants on success

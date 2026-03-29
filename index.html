@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Avurudu Vasi</title>
+<!-- Basic -->
+<meta name="description" content="Special Avurudu Vadi. Exclusive Discount.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Avurudu Vasi">
+<meta property="og:description" content="Special Avurudu Vadi. Exclusive Discount.">
+<meta property="og:image" content="https://cibweb.lk/wp-content/uploads/2026/02/Aurudu-2026-Offer-Banners-10-1024x1024.webp">
+<meta property="og:url" content="https://cibonline.lk/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CIB">
+
+
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #ffffff, #eaf2ff);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔵 TOP STRIP (SHIP ABOVE) */
+.top-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+/* MAIN BOX */
+.intro {
+    text-align: center;
+    padding: 40px;
+    max-width: 350px;
+    width: 90%;
+}
+
+/* TITLE */
+h1 {
+    font-size: 26px;
+    color: #2563eb;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease;
+}
+
+/* OFFER */
+.offer {
+    font-size: 34px;
+    font-weight: bold;
+    color: #111;
+    margin: 10px 0;
+    animation: scaleUp 1s ease;
+}
+
+/* SUB TEXT */
+p {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 10px;
+}
+
+/* LOADER */
+.loader {
+    margin: 25px auto 0;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #2563eb;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    animation: spin 1s linear infinite;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes scaleUp {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.logo {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: logoFade 1.2s ease forwards;
+}
+
+/* Logo animation */
+@keyframes logoFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+</style>
+</head>
+
+<body>
+
+<!-- 🔵 TOP BAR -->
+<div class="top-bar">
+    Free Delivery for Colombo | Islandwide Delivery Available
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="intro">
+<img src="https://cibonline.lk/wp-content/uploads/2024/11/CIB-Online-Store.png" width="100px" class="logo">
+    <h1>Avurudu Special Offer</h1>
+  <p>Celebrate Avurudu with BIG savings at CIB Shopping Centre.</p>
+  
+<p><b>Enjoy Exclusive Savings with credit/debit cards this festive season</b></p>
+    <div class="offer" id="offerText">Loading...</div>
+    <p id="subText">Preparing your seasonal deals</p>
+
+    <div class="loader"></div>
+</div>
+
+<script>
+// 🎲 RANDOM DISCOUNT (30% - 70%)
+const discount = Math.floor(Math.random() * 41) + 30;
+document.getElementById("offerText").innerText = `${discount}% OFF`;
+
+// ⏳ COUNTDOWN
+let seconds = 3;
+const subText = document.getElementById("subText");
+
+const timer = setInterval(() => {
+    seconds--;
+    subText.innerText = `Redirecting in ${seconds}s`;
+
+    if (seconds <= 0) {
+        clearInterval(timer);
+        window.location.href = "page.html";
+    }
+}, 1000);
+</script>
+
+</body>
+</html>

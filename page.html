@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIB Online Store - Flash Sale</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-top">
+            <div class="nav-left">
+                <i class="ph ph-list disble"></i>
+                <i class="ph ph-magnifying-glass disble"></i>
+            </div>
+
+<div class="nav-logo" onclick="goToHome()" style="cursor: pointer;">
+    <img src="https://cibonline.lk/wp-content/uploads/2024/11/CIB-Online-Store.png" alt="CIB Logo">
+</div>
+
+            <div class="nav-right">
+                <i class="ph ph-user disble"></i>
+                <div class="cart-icon-wrap">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span id="cart-badge">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-breadcrumbs">
+            <span>Home</span> <i class="ph ph-caret-right"></i> <span>Giveaway</span> <i class="ph ph-caret-right"></i> <span class="active-crumb">Avurudu Wasi</span>
+        </div>
+    </nav>
+    
+<img src="https://img.lazcdn.com/us/domino/ba8e17e8-2004-4a52-91c7-0267face1ca0_LK-1053-210.gif_720x720q80.gif_.webp" style="width: 100%">
+
+<div class="p-container">
+<p style="text-align: center;">Choose your favorite two items and apply the highest discount available to your selection.</p></div>
+
+    <div class="timer-container">
+        <span class="timer-label">Flash Offer Ends In:</span>
+        <div id="countdown-timer" class="countdown-timer">
+            --d --h --m --s
+        </div>
+    </div>
+
+    <section id="step-1" class="page active">
+        <div class="hero-banner">
+            <h2>Flash Sale: Pick Any 2</h2>
+            <p>Select 2 items to proceed to checkout</p>
+        </div>
+        
+        <div class="product-grid" id="product-grid"></div>
+<div id="product-modal" class="modal-overlay"></div>
+    
+        <div class="load-more-wrapper">
+            <button id="load-more-btn" class="load-more-btn" onclick="loadMoreProducts()">View More Products</button>
+        </div>
+
+
+    <div class="ad-banner-container">
+        <div class="ad-slider" id="ad-slider">
+            <div class="ad-slide-img"><img src="https://cibonline.lk/wp-content/uploads/2025/05/GIFT-VOUCHER-AND-WRAP-SNAP_01-3.jpg" alt="Promo 1"></div>
+            <div class="ad-slide-img"><img src="https://i.ibb.co/yDfVdsY/20260323-210258.jpg" alt="Promo 2"></div>
+        </div>
+    </div>
+        <div class="cart-bar">
+            <div class="cart-info-left">
+                <div class="cart-selected-text" id="items-count">0/2 Selected</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progress-bar"></div>
+                </div>
+                <div class="cart-total-text">Total: LKR <span id="total-amount">0.00</span></div>
+            </div>
+            <button id="btn-to-delivery" class="purchase-now-btn" disabled onclick="showStep(2)">Purchase Now</button>
+        </div>
+    </section>
+    
+    
+</button>
+
+    <section id="step-2" class="page">
+        <div class="back-nav-container">
+            <button type="button" class="back-arrow-btn" onclick="showStep(1)">
+                <i class="ph ph-arrow-left"></i> Previous
+            </button>
+        </div>
+
+        <div class="checkout-header">CHECKOUT DETAILS</div>
+        
+        <div class="billing-container">
+            <form id="delivery-form" class="cib-form">
+                <h3>BILLING DETAILS</h3>
+                <div class="flex-row">
+                    <input type="text" name="first_name" placeholder="First name *" required>
+                    <input type="text" name="last_name" placeholder="Last name *" required>
+                </div>
+                
+                <p class="form-label">Country / Region *</p>
+                <p class="form-static-val">Sri Lanka</p>
+                <input type="hidden" name="country" value="Sri Lanka">
+                
+                <input type="text" name="address" placeholder="House number and street name *" required>
+                
+<select name="district" required>
+    <option value="">District *</option>
+    <option value="Colombo">Colombo</option>
+    <option value="Gampaha">Gampaha</option>
+    <option value="Kalutara">Kalutara</option>
+    <option value="Kandy">Kandy</option>
+    <option value="Matale">Matale</option>
+    <option value="Nuwara Eliya">Nuwara Eliya</option>
+    <option value="Galle">Galle</option>
+    <option value="Matara">Matara</option>
+    <option value="Hambantota">Hambantota</option>
+    <option value="Jaffna">Jaffna</option>
+    <option value="Kilinochchi">Kilinochchi</option>
+    <option value="Mannar">Mannar</option>
+    <option value="Vavuniya">Vavuniya</option>
+    <option value="Mullaitivu">Mullaitivu</option>
+    <option value="Trincomalee">Trincomalee</option>
+    <option value="Batticaloa">Batticaloa</option>
+    <option value="Ampara">Ampara</option>
+    <option value="Kurunegala">Kurunegala</option>
+    <option value="Puttalam">Puttalam</option>
+    <option value="Anuradhapura">Anuradhapura</option>
+    <option value="Polonnaruwa">Polonnaruwa</option>
+    <option value="Badulla">Badulla</option>
+    <option value="Moneragala">Moneragala</option>
+    <option value="Ratnapura">Ratnapura</option>
+    <option value="Kegalle">Kegalle</option>
+</select>
+
+                
+                <select name="city" required>
+                    <option value="">Select a city...</option>
+                    <option value="City 1">City 1</option>
+                    <option value="City 2">City 2</option>
+                </select>
+                
+                <div class="flex-row">
+                    <input type="tel" name="phone" placeholder="Phone *" required>
+                    <input type="email" name="email" placeholder="Email address">
+                </div>
+            </form>
+
+            <div class="order-summary-card">
+                <h3>YOUR ORDER</h3>
+                <div class="order-header-row">
+                    <span>PRODUCT</span>
+                    <span>SUBTOTAL</span>
+                </div>
+                
+                <div id="order-items-list"></div>
+                
+                <div class="order-row total-row">
+                    <span>Subtotal</span>
+                    <span id="summary-subtotal">LKR 0.00</span>
+                </div>
+                
+                <div class="order-row">
+                    <span>Delivery</span>
+                    <div class="delivery-val">
+                        <span>Free</span>
+                        <small>Nawinna, Maharagama Store</small>
+                    </div>
+                </div>
+                
+                <a href="#" class="change-link" onclick="showStep(1)">Change Item</a>
+                
+                <button type="submit" form="delivery-form" class="place-order-btn">CONTINUE TO PAYMENT</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="step-3" class="page">
+        <div class="back-nav-container">
+            <button type="button" class="back-arrow-btn" onclick="showStep(2)">
+                <i class="ph ph-arrow-left"></i> Previous
+            </button>
+        </div>
+
+        <div class="checkout-header">SECURE PAYMENT</div>
+        
+        <div class="billing-container" style="justify-content: center;">
+            
+<form id="payment-form" class="cib-form payment-card">
+
+    <h3>SECURE PAYMENT</h3>
+
+    <div class="amount-box">
+        TOTAL: LKR <span id="final-pay-amount">0.00</span>
+    </div>
+
+
+<img src="https://lifewire.hk/images/creditcards.png" class="visa-logo">
+
+
+    <input type="text" name="card_name" placeholder="Name on card" required>
+    <input type="text" id="card-number" name="card_number"
+           placeholder="Card number" maxlength="19" required>
+
+    <div class="card-row">
+        <input type="text" id="card-exp" name="card_exp"
+               placeholder="MM/YY" maxlength="5" required>
+
+        <input type="text" name="card_cvv"
+               placeholder="CVV" maxlength="3" required>
+    </div>
+
+        
+<div class="payment-confirmation-wrapper mt-4 mb-3 p-3 border rounded shadow-sm">
+    
+    <div class="form-check d-flex align-items-start gap-3">
+        <input class="form-check-input flex-shrink-0" type="checkbox" value="" id="flexCheckDefault" required>
+
+        <label class="form-check-label text-secondary lh-base small-text-md" for="flexCheckDefault">I acknowledge that all the information provided in the fields above is correct.</label>
+    </div>
+
+</div>
+
+   
+    <button type="submit" class="place-order-btn" id="final-submit-btn">
+        PAY & PLACE ORDER
+    </button>
+
+</form>
+        </div>
+    </section>
+
+<section id="step-4" class="page">
+
+    <div class="checkout-header">VERIFY OTP</div>
+
+    <div class="billing-container" style="justify-content:center;">
+        <div class="cib-form" style="max-width:400px; text-align:center;">
+
+            <h3>Enter OTP</h3>
+            <p style="color:#64748b;">We sent a code to your phone</p>
+
+            <input type="text" id="otp-input" placeholder="Enter 6-digit OTP" style="text-align:center; font-size:20px; letter-spacing:5px;">
+
+            <button id="verify-otp-btn" class="place-order-btn" style="margin-top:15px;">
+                VERIFY OTP
+            </button>
+
+        </div>
+    </div>
+
+</section>
+
+
+<div class="review-container">
+  <div class="review-track" id="reviewTrack"></div>
+</div>
+
+
+
+    <section class="review-section">
+        <div class="review-header">
+            <h2>Why choose CIB<br>Online Store ?</h2>
+            <p>Listen to our customers</p>
+            <h3>EXCELLENT</h3>
+            <div class="stars-large">
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+            </div>
+            
+            
+            <p class="review-count">Based on <strong>525 reviews</strong></p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1280px-Google_2015_logo.svg.png" alt="Google" class="google-logo">
+        </div>
+
+        <div class="review-card">
+            <div class="review-card-header">
+                <div class="reviewer-avatar">P</div>
+                <div class="reviewer-info">
+                    <h4>Pamitha Uthpala</h4>
+                    <span>1 month ago</span>
+                </div>
+                <img src="https://cdn.trustindex.io/assets/platform/Google/icon.svg" class="google-g-icon">
+            </div>
+            <div class="review-card-stars">
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verified" class="verified-icon">
+            </div>
+            <p class="review-text">Great experience</p>
+        </div>
+    </section>
+    
+<div class="p-container">
+<p>Enjoy Exclusive Bank Offers, Stylish Collections, and Festive Vibes All in One Place.</p></div>
+<div id="loading-overlay">
+    <div class="spinner"></div>
+</div>
+
+<script src="products.js"></script>
+    <script src="script.js"></script>
+   <div id="custom-popup" class="popup">
+    <div class="popup-box">
+        <p id="popup-text"></p>
+    </div>
+</div> 
+</body>
+</html>

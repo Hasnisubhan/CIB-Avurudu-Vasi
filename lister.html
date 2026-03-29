@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIB Code Gen - Mobile Ready</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #10b981;
+            --bg: #f1f5f9;
+            --card: #ffffff;
+            --text: #1e293b;
+        }
+
+        body { font-family: -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 15px; }
+        .container { max-width: 600px; margin: auto; background: var(--card); padding: 20px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        
+        h2 { margin-top: 0; font-size: 1.5rem; text-align: center; color: var(--primary); }
+        
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: 600; font-size: 13px; margin-bottom: 5px; color: #64748b; }
+        
+        input, textarea, select { 
+            width: 100%; padding: 12px; border: 1.5px solid #e2e8f0; border-radius: 8px; resize: vertical;
+            font-size: 16px; box-sizing: border-box; transition: 0.2s;
+        }
+        input:focus { outline: none; border-color: var(--primary); }
+
+        /* Custom Toggle Switch */
+        .option-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+        .switch { position: relative; display: inline-block; width: 40px; height: 20px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; inset: 0; background-color: #cbd5e1; transition: .4s; border-radius: 20px; }
+        .slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider { background-color: var(--primary); }
+        input:checked + .slider:before { transform: translateX(20px); }
+
+        .optional-content { display: none; margin-top: 10px; animation: slideDown 0.3s ease; }
+        .optional-content.active { display: block; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+        button { border: none; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 14px; }
+        .gen-btn { background: var(--primary); color: white; width: 100%; grid-column: span 2; }
+        .copy-btn { background: var(--secondary); color: white; }
+        .clear-btn { background: #ef4444; color: white; }
+
+        #output-container { margin-top: 20px; display: none; }
+        #output { 
+            background: #0f172a; color: #38bdf8; padding: 15px; border-radius: 8px; 
+            overflow-x: auto; font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.5;
+            white-space: pre; border: 1px solid #1e293b;
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            .container { padding: 15px; }
+            input, textarea { font-size: 14px; }
+        }}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🚀 Product Code Gen</h2>
+    
+    <div class="form-group">
+        <label>Product Name (Used in Comment Header)</label>
+        <input type="text" id="p-title" placeholder="e.g. Moose Slim Fit Polo">
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 10px;">
+        <div class="form-group">
+            <label>ID Number</label>
+            <input type="number" id="p-id" placeholder="10">
+        </div>
+        <div class="form-group">
+            <label>Price (LKR)</label>
+            <input type="number" id="p-price" placeholder="1500">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Discount %</label>
+        <input type="number" id="p-discount" placeholder="20">
+    </div>
+
+    <div class="form-group">
+        <label>Image URLs (One per line)</label>
+        <textarea id="p-imgs" rows="3" placeholder="https://image1.jpg&#10;https://image2.jpg"></textarea>
+    </div>
+
+    <div class="form-group">
+        <div class="option-header">
+            <label style="margin:0;">Include Sizes?</label>
+            <label class="switch">
+                <input type="checkbox" id="toggle-size" onchange="toggleBox('size-box')">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div id="size-box" class="optional-content">
+            <input type="text" id="p-sizes" placeholder="S, M, L, XL">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="option-header">
+            <label style="margin:0;">Include Colors?</label>
+            <label class="switch">
+                <input type="checkbox" id="toggle-color" onchange="toggleBox('color-box')">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div id="color-box" class="optional-content">
+            <input type="text" id="p-colors" placeholder="Red, Black, Navy">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Description (HTML)</label>
+        <textarea id="p-desc" placeholder="Product details..."></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Stock</label>
+        <input type="number" id="p-stock" value="10">
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="form-group">
+            <div class="option-header">
+                <label style="margin:0;">Material?</label>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-mat" onchange="toggleBox('mat-box')">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div id="mat-box" class="optional-content">
+                <input type="text" id="p-mat" placeholder="Cotton">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="option-header">
+                <label style="margin:0;">Weight?</label>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-weight" onchange="toggleBox('weight-box')">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div id="weight-box" class="optional-content">
+                <input type="text" id="p-weight" placeholder="0.5kg">
+            </div>
+        </div>
+    </div>
+
+    <button class="gen-btn" onclick="generate()">GENERATE CODE</button>
+
+    <div id="output-container">
+        <label>Final Code:</label>
+        <div id="output"></div>
+        <div class="btn-row">
+            <button class="clear-btn" onclick="clearAll()">CLEAR</button>
+            <button class="copy-btn" onclick="copy()">COPY JS</button>
+        </div>
+    </div>
+</div>
+
+<script>
+window.onload = function() {
+    // 1. Restore the last generated code output
+    const savedCode = localStorage.getItem('last_gen_product');
+    if (savedCode) {
+        document.getElementById('output').innerText = savedCode;
+        document.getElementById('output-container').style.display = 'block';
+    }
+
+    // 2. Restore all text and number inputs
+    const inputs = ['p-title', 'p-id', 'p-price', 'p-discount', 'p-imgs', 'p-desc', 'p-stock', 'p-sizes', 'p-colors', 'p-mat', 'p-weight'];
+    inputs.forEach(id => {
+        const val = localStorage.getItem('input_' + id);
+        if (val !== null) document.getElementById(id).value = val;
+    });
+
+    // 3. Restore toggles and show/hide their respective boxes
+    const toggles = [
+        { check: 'toggle-size', box: 'size-box' },
+        { check: 'toggle-color', box: 'color-box' },
+        { check: 'toggle-mat', box: 'mat-box' },
+        { check: 'toggle-weight', box: 'weight-box' }
+    ];
+    
+    toggles.forEach(item => {
+        const isChecked = localStorage.getItem('toggle_' + item.check) === 'true';
+        const checkbox = document.getElementById(item.check);
+        const box = document.getElementById(item.box);
+        
+        checkbox.checked = isChecked;
+        if (isChecked) {
+            box.classList.add('active');
+        }
+    });
+};
+
+// Function to save everything to localStorage
+function saveToStorage() {
+    // Save text values
+    const inputs = ['p-title', 'p-id', 'p-price', 'p-discount', 'p-imgs', 'p-desc', 'p-stock', 'p-sizes', 'p-colors', 'p-mat', 'p-weight'];
+    inputs.forEach(id => {
+        localStorage.setItem('input_' + id, document.getElementById(id).value);
+    });
+
+    // Save toggle states
+    const toggles = ['toggle-size', 'toggle-color', 'toggle-mat', 'toggle-weight'];
+    toggles.forEach(id => {
+        localStorage.setItem('toggle_' + id, document.getElementById(id).checked);
+    });
+}
+
+// Listen for any input changes to trigger auto-save
+document.addEventListener('input', saveToStorage);
+
+function toggleBox(id) {
+    document.getElementById(id).classList.toggle('active');
+    saveToStorage(); // Save the state immediately when toggled
+}
+
+function generate() {
+    const title = document.getElementById('p-title').value || "Unnamed Product";
+    const id = document.getElementById('p-id').value || "0";
+    const price = document.getElementById('p-price').value || "0";
+    const disc = document.getElementById('p-discount').value || "0";
+    const imgs = document.getElementById('p-imgs').value.split('\n').filter(i => i.trim() !== "");
+    const desc = document.getElementById('p-desc').value.replace(/"/g, "'");
+    const stock = document.getElementById('p-stock').value || "0";
+
+    let code = `/* --- ${title.toUpperCase()} --- */\n`;
+    code += `{\n`;
+    code += `    id: ${id},\n`;
+    code += `    title: "${title}",\n`;
+    code += `    price: ${price},\n`;
+    code += `    discount: ${disc},\n`;
+    code += `    description: "${desc}",\n`;
+    code += `    imgs: ${JSON.stringify(imgs, null, 8).replace(/]$/, "    ]")},\n`;
+    
+    let specFields = [`stock: ${stock}`];
+    if(document.getElementById('toggle-mat').checked) specFields.push(`material: "${document.getElementById('p-mat').value}"`);
+    if(document.getElementById('toggle-weight').checked) specFields.push(`weight: "${document.getElementById('p-weight').value}"`);
+
+    code += `    specs: { ${specFields.join(', ')} }`;
+
+    if(document.getElementById('toggle-size').checked) {
+        const sizes = document.getElementById('p-sizes').value.split(',').map(s => s.trim()).filter(s => s);
+        code += `,\n    sizes: ${JSON.stringify(sizes)}`;
+    }
+
+    if(document.getElementById('toggle-color').checked) {
+        const colors = document.getElementById('p-colors').value.split(',').map(c => c.trim()).filter(c => c);
+        code += `,\n    colors: ${JSON.stringify(colors)}`;
+    }
+
+    code += `\n},`;
+
+    document.getElementById('output').innerText = code;
+    document.getElementById('output-container').style.display = 'block';
+    
+    // Save the final code string
+    localStorage.setItem('last_gen_product', code);
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+function copy() {
+    const text = document.getElementById('output').innerText;
+    navigator.clipboard.writeText(text);
+    alert("Copied! Paste it into products.js");
+}
+
+function clearAll() {
+    if(confirm("Are you sure you want to clear all inputs and saved data?")) {
+        localStorage.clear(); 
+        window.location.reload();
+    }
+}
+
+</script>
+
+</body>
+</html>

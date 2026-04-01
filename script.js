@@ -466,6 +466,205 @@ window.addEventListener("popstate", function () {
         closeModal();
     }
 });
+
+
+const viewer = document.getElementById("imageViewer");
+const viewerImage = document.getElementById("viewerImage");
+
+let currentImages = [];
+let currentIndex = 0;
+
+let scale = 1;
+let translateX = 0;
+let translateY = 0;
+
+let isDragging = false;
+let startX, startY;
+
+/* =========================
+   OPEN VIEWER
+========================= */
+window.openImageViewer = function (src, images = []) {
+    viewer.classList.add("active");
+
+    currentImages = images.length ? images : [src];
+    currentIndex = currentImages.indexOf(src);
+    if (currentIndex === -1) currentIndex = 0;
+
+    loadImage();
+
+    resetTransform();
+};
+
+function loadImage() {
+    viewerImage.src = currentImages[currentIndex];
+}
+
+function resetTransform() {
+    scale = 1;
+    translateX = 0;
+    translateY = 0;
+    updateTransform();
+}
+
+/* =========================
+   CLOSE VIEWER
+========================= */
+window.closeImageViewer = function () {
+    viewer.classList.remove("active");
+};
+
+/* =========================
+   TRANSFORM
+========================= */
+function updateTransform() {
+    viewerImage.style.transform =
+        `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+}
+
+/* =========================
+   CLICK IMAGE TO OPEN
+========================= */
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("slider-image")) {
+
+        const images = Array.from(
+            e.target.closest(".slider-container").querySelectorAll(".slider-image")
+        ).map(img => img.src);
+
+        openImageViewer(e.target.src, images);
+    }
+});
+
+/* =========================
+   DRAG / PAN (ONLY WHEN ZOOMED)
+========================= */
+viewerImage.addEventListener("mousedown", (e) => {
+    if (scale <= 1) return;
+
+    isDragging = true;
+    startX = e.clientX - translateX;
+    startY = e.clientY - translateY;
+});
+
+window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    translateX = e.clientX - startX;
+    translateY = e.clientY - startY;
+
+    updateTransform();
+});
+
+window.addEventListener("mouseup", () => {
+    isDragging = false;
+});
+
+/* =========================
+   TOUCH DRAG (MOBILE)
+========================= */
+viewerImage.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 1 && scale > 1) {
+        isDragging = true;
+        startX = e.touches[0].clientX - translateX;
+        startY = e.touches[0].clientY - translateY;
+    }
+});
+
+viewerImage.addEventListener("touchmove", (e) => {
+    if (!isDragging || e.touches.length !== 1) return;
+
+    translateX = e.touches[0].clientX - startX;
+    translateY = e.touches[0].clientY - startY;
+
+    updateTransform();
+});
+
+viewerImage.addEventListener("touchend", () => {
+    isDragging = false;
+});
+
+/* =========================
+   PINCH ZOOM
+========================= */
+let initialDistance = null;
+
+viewerImage.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 2) {
+        initialDistance = getDistance(e.touches[0], e.touches[1]);
+    }
+});
+
+viewerImage.addEventListener("touchmove", (e) => {
+    if (e.touches.length === 2) {
+        let currentDistance = getDistance(e.touches[0], e.touches[1]);
+
+        let zoom = currentDistance / initialDistance;
+
+        scale = Math.min(Math.max(scale * zoom, 1), 4);
+
+        initialDistance = currentDistance;
+
+        updateTransform();
+    }
+});
+
+function getDistance(t1, t2) {
+    return Math.hypot(
+        t2.clientX - t1.clientX,
+        t2.clientY - t1.clientY
+    );
+}
+
+/* =========================
+   SWIPE (ONLY WHEN NOT ZOOMED)
+========================= */
+let startSwipeX = 0;
+let endSwipeX = 0;
+
+viewerImage.addEventListener("touchstart", (e) => {
+    if (scale <= 1 && e.touches.length === 1) {
+        startSwipeX = e.touches[0].clientX;
+    }
+});
+
+viewerImage.addEventListener("touchend", (e) => {
+    if (scale > 1) return; // disable swipe when zoomed
+
+    endSwipeX = e.changedTouches[0].clientX;
+
+    let diff = startSwipeX - endSwipeX;
+
+    if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+            nextImage();
+        } else {
+            prevImage();
+        }
+    }
+});
+
+/* =========================
+   NEXT / PREV IMAGE
+========================= */
+function nextImage() {
+    if (currentIndex < currentImages.length - 1) {
+        currentIndex++;
+        loadImage();
+        resetTransform();
+    }
+}
+
+function prevImage() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        loadImage();
+        resetTransform();
+    }
+}
+
+
+
     // 2. Modal Outside Click Fix
     const productModal = document.getElementById('product-modal');
     if(productModal) {

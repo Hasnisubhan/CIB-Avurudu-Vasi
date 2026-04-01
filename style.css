@@ -742,3 +742,67 @@ hr {
   font-size: 13px;
   color: #555;
 }
+
+.image-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.95);
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.image-viewer.active {
+    display: flex;
+}
+
+.image-viewer img {
+    max-width: 95vw;
+    max-height: 95vh;
+    object-fit: contain;
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
+
+.close-viewer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    background: red;
+    color: white;
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 10000;
+}
+.viewer-slider {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewer-slider img {
+    max-width: 95vw;
+    max-height: 95vh;
+    object-fit: contain;
+    transform-origin: center;
+}

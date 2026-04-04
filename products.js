@@ -34,7 +34,7 @@ const products = [
     id: 13,
     title: "Men’s Black Laptop Bag",
     price: 2546,
-    discount: 25,
+    discount: 30,
     description: "Shop Men’s Black Laptop Bag | Buy Online Laptop Bags for the Lowest Price in Sri Lanka from cibonline.lk.",
     imgs: [
         "https://cibonline.lk/wp-content/uploads/2025/08/01ofzb-1-scaled.jpg",
@@ -151,7 +151,7 @@ sizes: ["Free Size"]
     id: 45,
     title: "Women’s Pink Clutch Purse",
     price: 2993,
-    discount: 25,
+    discount: 23,
     description: "Shop Women’s Pink Clutch Purse | Elegant glitter fabric with textured wave pattern.<ul><li>Gold-tone chain strap</li><li>Secure metallic clasp closure</li><li>Compact and lightweight design</li></ul>",
     imgs: [
         "https://cibonline.lk/wp-content/uploads/2026/01/03-1-768x981.jpg",
@@ -188,7 +188,7 @@ sizes: ["Free Size"]
     id: 47,
     title: "Midi Ruffle Hem Dress",
     price: 1493,
-    discount: 25,
+    discount: 32,
     description: "Midi Ruffle Hem Dress | Relaxed & flowy dress with lightweight fabric and all-day comfort.<ul><li>Invisible Back Zipper</li><li>Adjustable Shoulder Straps</li><li>Lightweight Fabric & All-Day Comfort</li><li>Brand – LORA</li><li>Material – Masha</li><li>Model Wearing Size – M Size</li></ul>",
     imgs: [
         "https://cibonline.lk/wp-content/uploads/2025/10/25-scaled.jpg",
@@ -209,7 +209,7 @@ sizes: ["Free Size"]
     id: 48,
     title: "Comfy Denim Mini Dress",
     price: 1643,
-    discount: 25,
+    discount: 27,
     description: "Comfy Denim Mini Dress | Cute & relaxed fit for all-day comfort, perfect for casual outings or travel.<ul><li>Sleeveless design with two pleat detail at neckline</li><li>Lightweight denim fabric</li><li>Handy side pockets</li><li>Material – Denim Chambray</li><li>Model Wearing Size – UK 10</li></ul>",
     imgs: [
         "https://cibonline.lk/wp-content/uploads/2025/12/10update-20-scaled.jpg",
@@ -256,7 +256,7 @@ sizes: ["Free Size"]
     id: 50,
     title: "Tie-Waist Sleeveless Dress",
     price: 1793,
-    discount: 25,
+    discount: 27,
     description: "Tie-Waist Sleeveless Dress | Stylish and comfortable dress with adjustable waist tie and elegant front slit.<ul><li>Shoulder to waist button-down front design</li><li>Sleeveless and collared style</li><li>Front slit detail for added style</li><li>Soft and comfortable fabric</li><li>Adjustable waist tie belt</li><li>Invisible Side Zipper</li><li>Brand – LORA</li><li>Material – Maserati</li><li>Model Wearing Size – M Size</li></ul>",
     imgs: [
         "https://cibonline.lk/wp-content/uploads/2025/12/10update-12-scaled.jpg",
@@ -296,7 +296,7 @@ sizes: ["Free Size"]
     id: 52,
     title: "Women’s Casual Cotton Short",
     price: 893,
-    discount: 25,
+    discount: 32,
     description: "Women’s Casual Cotton Short | Comfortable loose fit shorts perfect for daily wear.<ul><li>Roll Hem</li><li>Waist With Tie Belt</li><li>Embossed Side Pockets</li><li>Loose Fit & Comfortable</li><li>Short Front Waist Band & Back Elastic Waist</li><li>Brand – LORA</li><li>Material – Crush Cotton</li><li>Model Wearing Size – 32 Size</li></ul>",
     imgs: [
         "https://cibonline.lk/wp-content/uploads/2025/12/10update-27-scaled.jpg",
@@ -316,7 +316,7 @@ sizes: ["Free Size"]
     id: 53,
     title: "Sleeveless Pocket Wrap Dress",
     price: 1687,
-    discount: 25,
+    discount: 30,
     description: "Sleeveless Pocket Wrap Dress | Stylish wrap dress perfect for casual or semi-formal occasions.<ul><li>Lightweight Fabric</li><li>Handy Side Pockets</li><li>Wrap-Style V-Neckline</li><li>Comfortable Sleeveless design</li><li>Gathered Waist For a Feminine Fit</li><li>Brand – LORA</li><li>Material – Crush Cotton</li><li>Model Wearing Size – M Size</li></ul>",
     imgs: [
         "https://cibonline.lk/wp-content/uploads/2025/10/7-1-scaled.jpg",
@@ -376,7 +376,7 @@ sizes: ["Free Size"]
     id: 56,
     title: "Black Ladies Casual Pant",
     price: 1643,
-    discount: 25,
+    discount: 28,
     description: "Black Ladies Casual Pant | Comfortable and stylish casual pant for everyday wear.<ul><li>Material – Polyester Rib</li><li>Model Wearing Size – 30 Size</li><li>Lightweight and comfortable fit</li></ul>",
     imgs: [
         "https://cibonline.lk/wp-content/uploads/2025/10/3-scaled.jpg",
@@ -396,7 +396,7 @@ sizes: ["Free Size"]
     id: 57,
     title: "Cotton Embroidery Dress For Ladies",
     price: 2618,
-    discount: 25,
+    discount: 27,
     description: "Cotton Embroidery Dress For Ladies | Elegant embroidered dress with a comfortable and stylish fit.<ul><li>Embroidery Design</li><li>Three Quarter Sleeve</li><li>Invisible Back Zipper</li><li>Mandarin Collar Design</li><li>Brand – LORA</li><li>Material – Crush Cotton</li><li>Model Wearing Size – M Size</li></ul>",
     imgs: [
         "https://cibonline.lk/wp-content/uploads/2025/12/10update-11-scaled.jpg",
@@ -412,6 +412,341 @@ sizes: ["Free Size"]
     },
 
     sizes: ["M","L","XL","2XL"]
+},
+{
+    id: 58,
+    title: "Men’s Oversized Black Casual T-Shirt",
+    price: 2399,
+    discount: 35,
+    description: "Men’s Oversized Black Casual T-Shirt | Comfortable oversized t-shirt perfect for casual wear.<ul><li>Oversize fit</li><li>Crew Neck</li><li>Material – 80% Cotton 20% Lycra</li><li>Model Wearing Size – L</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/07/TT-29-2.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/07/TT-29-3-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/07/TT-29-1-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/09/13nn-9-scaled.jpg"
+    ],
+    specs: {
+        material: "80% Cotton 20% Lycra",
+        weight: "0.3kg",
+        stock: 10
+    },
+    colors: ["Black"],
+    sizes: ["M","L","XL"]
+},
+{
+    id: 59,
+    title: "Axe Body Spray Black -135ml",
+    price: 1342,
+    discount: 25,
+    description: "Axe Body Spray Black -135ml | Long-lasting fragrance for daily freshness.<ul><li>Compact and easy to carry</li><li>Ideal for everyday use</li><li>Suitable for all-day freshness</li></ul><br><span style='color:red; font-weight:bold;'>Please note: This item cannot be returned.</span>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2024/05/01-5-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2024/05/02-4-768x981.jpg"
+    ],
+    specs: {
+        weight: "0.2kg",
+        stock: 13
+    },
+},
+{
+    id: 60,
+    title: "Manual Men’s Umbrella 27″ (S2137)",
+    price: 1309,
+    discount: 30,
+    description: "Manual Men’s Umbrella 27″ (S2137) | Durable umbrella suitable for daily use.<ul><li>Material – Taffeta Fabric</li><li>UV Protection Umbrella</li><li>Strong and reliable build</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2024/07/14-1-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2024/07/13-2-768x981.jpg"
+    ],
+    specs: {
+        material: "Taffeta Fabric",
+        weight: "0.59kg",
+        stock: 2
+    },
+},
+{
+    id: 61,
+    title: "ELK Men’s Blue Polo T-Shirt",
+    price: 1603,
+    discount: 30,
+    description: "ELK Men’s Blue Polo T-Shirt | Stylish polo t-shirt made for comfort and everyday wear.<ul><li>MADE IN SRI LANKA</li><li>Polo Collar</li><li>Seamless Placket</li><li>Side Slit</li><li>Brand – ELK Clothing</li><li>Material – Nautica Fabric</li><li>Model Wearing Size – L</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/07/01-5.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/07/02-5-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/07/03-5-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/12/03-scaled.jpg"
+    ],
+    specs: {
+        brand: "ELK Clothing",
+        material: "Nautica Fabric",
+        weight: "0.3kg",
+        stock: 10
+    },
+    colors: ["Blue"],
+    sizes: ["M","L","XL","2XL"]
+},
+{
+    id: 62,
+    title: "Elk Jogger Ash Casual Pant",
+    price: 3003,
+    discount: 30,
+    description: "Elk Jogger Ash Casual Pant | Comfortable jogger pants with relaxed fit and modern style.<ul><li>Elastic With Drawstring Closure</li><li>Relaxed Straight Leg Fit</li><li>4-pocket Design</li><li>Elastic Drawcord At Ankle</li><li>Brand – ELK Clothing</li><li>Material – 98% Cotton 2% Spandex</li><li>Model Wearing Size – 32″ Size</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/08/4-2-scaled.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/08/3-2-scaled.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/08/n-Jogger-Pants-WEB.jpg"
+    ],
+    specs: {
+        brand: "ELK Clothing",
+        material: "98% Cotton 2% Spandex",
+        weight: "0.52kg",
+        stock: 10
+    },
+    colors: ["Ash"],
+    sizes: ["28","30","32","34","36"]
+},
+{
+    id: 63,
+    title: "Men’s White Casual Shirt",
+    price: 2517,
+    discount: 30,
+    description: "Men’s White Casual Shirt | Stylish and comfortable shirt suitable for casual wear.<ul><li>Hybrid Fit</li><li>Short Sleeve</li><li>Classic Polo Collar</li><li>Material – Loopknit Jackuard Jersey</li><li>Model Wearing Size – XL</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/08/05-3-scaled.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/08/04-3-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/08/06-3-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/09/13nn-8-scaled.jpg"
+    ],
+    specs: {
+        material: "Loopknit Jackuard Jersey",
+        weight: "0.23kg",
+        stock: 10
+    },
+    colors: ["White"],
+    sizes: ["M","L","XL"]
+},
+{
+    id: 64,
+    title: "ELK Printed Men’s Casual Shirt",
+    price: 1953,
+    discount: 30,
+    description: "ELK Printed Men’s Casual Shirt | Stylish printed shirt with a relaxed and modern look.<ul><li>Cuban Collar</li><li>Short Sleeve</li><li>Brand – ELK Clothing</li><li>Material – 65% Polyester 35% Cotton</li><li>Model Wearing Size – M</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/07/10-4.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/07/11-4-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/07/12-3-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/12/01-1-scaled.jpg"
+    ],
+    specs: {
+        brand: "ELK Clothing",
+        material: "65% Polyester 35% Cotton",
+        weight: "0.21kg",
+        stock: 10
+    },
+    sizes: ["M","L","XL"]
+},
+{
+    id: 65,
+    title: "ELK Men’s Black Casual Shirt",
+    price: 1953,
+    discount: 30,
+    description: "ELK Men’s Black Casual Shirt | Stylish casual shirt with a relaxed fit and modern design.<ul><li>Cuban Collar</li><li>Short Sleeve</li><li>Brand – ELK Clothing</li><li>Material – 65% Polyester 35% Cotton</li><li>Model Wearing Size – M</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/07/01-7.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/07/03-7-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/07/hh03-2-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/12/02-scaled.jpg"
+    ],
+    specs: {
+        brand: "ELK Clothing",
+        material: "65% Polyester 35% Cotton",
+        weight: "0.225kg",
+        stock: 10
+    },
+    sizes: ["M","L","XL"]
+},
+{
+    id: 66,
+    title: "Men’s Casual Polo Tee",
+    price: 2307,
+    discount: 30,
+    description: "Men’s Casual Polo Tee | Smart fit polo tee designed for everyday comfort and style.<ul><li>Smart Fit</li><li>Polo Collar</li><li>Short Sleeve</li><li>3 Button Set-in Placket</li><li>Material – Needle Knit Jacquard Jersey</li><li>Model Wearing Size – L</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/07/a01.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/07/a03-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/07/a02-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/09/13nn-3-scaled.jpg"
+    ],
+    specs: {
+        material: "Needle Knit Jacquard Jersey",
+        weight: "0.280kg",
+        stock: 10
+    },
+    sizes: ["M","L","XL"]
+},
+{
+    id: 67,
+    title: "Ladies Baggy T Shirt",
+    price: 833,
+    discount: 30,
+    description: "Ladies Baggy T Shirt | Comfortable baggy style crop top designed for casual wear.<ul><li>Crew Neck</li><li>Baggy Sleeve</li><li>Crop Top</li><li>Material – 85% Cotton 15% Polyester</li><li>Model Wearing Size – M</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/06/7-3-scaled.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/06/8-2-1-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/10/1-2-scaled.jpg"
+    ],
+    specs: {
+        material: "85% Cotton 15% Polyester",
+        weight: "0.15kg",
+        stock: 10
+    },
+    sizes: ["S","M","L"]
+},
+{
+    id: 68,
+    title: "Ladies Baggy Tee",
+    price: 833,
+    discount: 30,
+    description: "Ladies Baggy Tee | Comfortable baggy style crop top for casual wear.<ul><li>Crew Neck</li><li>Baggy Sleeve</li><li>Crop Top</li><li>Material – 85% Cotton 15% Polyester</li><li>Model Wearing Size – M</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/06/5-6-scaled.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/06/6-3-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/10/1-2-scaled.jpg"
+    ],
+    specs: {
+        material: "85% Cotton 15% Polyester",
+        weight: "0.15kg",
+        stock: 10
+    },
+    sizes: ["S","M","L"]
+},
+{
+    id: 69,
+    title: "Ladies Pink Crop Top",
+    price: 875,
+    discount: 25,
+    description: "Ladies Pink Crop Top | Stylish and comfortable crop top for casual wear.<ul><li>Short Sleeve</li><li>Stretch & Comfortable</li><li>Material – 85% Cotton 15% Polyester</li><li>Model Wearing Size – M</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/06/3-15-scaled.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/06/4-10-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/10/2-2-scaled.jpg"
+    ],
+    specs: {
+        material: "85% Cotton 15% Polyester",
+        weight: "0.16kg",
+        stock: 10
+    },
+    sizes: ["M","L","XL"]
+},
+{
+    id: 70,
+    title: "Stainless Steel Water Bottle 750ML",
+    price: 644,
+    discount: 35,
+    description: "Stainless Steel Water Bottle 750ML | Durable insulated bottle suitable for daily use.<ul><li>Capacity : 750ML</li><li>Material : Stainless Steel</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2026/01/11-1-768x981.jpg"
+    ],
+    specs: {
+        capacity: "750ML",
+        material: "Stainless Steel",
+        weight: "0.225kg",
+        stock: 4
+    }
+},
+{
+    id: 71,
+    title: "Drinking Sports Water Bottle – 800ml",
+    price: 973,
+    discount: 30,
+    description: "Drinking Sports Water Bottle – 800ml | Lightweight and durable bottle for sports and daily hydration.<ul><li>Easy to clean</li><li>High Quality Durable Material</li><li>Leak Proof Design</li><li>Capacity : 800ML</li><li>Material : Plastic</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2024/12/dfgdg-scaled.jpg",
+        "https://cibonline.lk/wp-content/uploads/2024/12/dddd-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2024/12/6.23-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2024/12/6.22-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2024/12/9.5-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2024/12/3.67-768x981.jpg"
+    ],
+    specs: {
+        capacity: "800ML",
+        material: "Plastic",
+        weight: "0.2kg",
+        stock: 20
+    },
+    colors: ["Black", "Gray", "Orange"]
+},
+{
+    id: 72,
+    title: "Sport Water Bottle – 1500ml",
+    price: 770,
+    discount: 30,
+    description: "Sport Water Bottle – 1500ml | Large capacity bottle designed for hydration with convenient features.<ul><li>Bottle With Straw And Scale</li><li>Humanization and Portability</li><li>Capacity : 1500ML</li><li>Material : Plastic</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2024/12/08-4-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2024/12/10-2-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2024/12/01-4-768x981.jpg"
+    ],
+    specs: {
+        capacity: "1500ML",
+        material: "Plastic",
+        weight: "0.25kg",
+        stock: 17
+    }
+},
+{
+    id: 73,
+    title: "Sport Flat Water Bottle",
+    price: 1043,
+    discount: 30,
+    description: "Sport Flat Water Bottle | Compact and portable water bottle designed for daily convenience.<ul><li>One Click Open</li><li>Silicone Straw</li><li>Convenient To Carry</li><li>Water Leakage Prevention Design</li><li>Size : 350ML</li><li>Material : Plastic</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2024/12/1.7-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2024/12/1.6-768x981.jpg"
+    ],
+    specs: {
+        capacity: "350ML",
+        material: "Plastic",
+        weight: "0.32kg",
+        stock: 12
+    }
+},
+{
+    id: 74,
+    title: "Kids’ Silicone Purse With Removable Strap",
+    price: 483,
+    discount: 30,
+    description: "Kids’ Silicone Purse With Removable Strap | Cute and lightweight purse suitable for kids.<ul><li>Material : Silicone</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/01/uorinjghntfjr-9-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/01/uorinjghntfjr-7-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/01/utjugfh-scaled.jpg"
+    ],
+    specs: {
+        material: "Silicone",
+        weight: "0.12kg",
+        stock: 10
+    }
+},
+{
+    id: 75,
+    title: "Heart Shaped Silicone Purse",
+    price: 483,
+    discount: 30,
+    description: "Heart Shaped Silicone Purse | Stylish heart-shaped purse made for kids and casual use.<ul><li>Material : Silicone</li></ul>",
+    imgs: [
+        "https://cibonline.lk/wp-content/uploads/2025/01/ukiryui-12-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/01/ukiryui-10-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/01/ukiryui-6-scaled.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/01/ukiryui-4-768x981.jpg",
+        "https://cibonline.lk/wp-content/uploads/2025/01/hrureryu-scaled.jpg"
+    ],
+    specs: {
+        material: "Silicone",
+        weight: "0.12kg",
+        stock: 1
+    },
+    sizes: ["White", "Red"]
 }
 ];
 
